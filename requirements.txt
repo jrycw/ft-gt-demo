@@ -1,0 +1,5 @@
+great_tables[extra]
+pandas
+polars
+python-fasthtml
+pytest
