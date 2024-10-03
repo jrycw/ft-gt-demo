@@ -33,10 +33,19 @@ def test_app():
         page.goto(test_url)
 
         page.wait_for_timeout(3000)
-        page.screenshot(path="screenshot.png")
+        # page.screenshot(path="screenshot.png")
+
+        # test title tag
+        expect(page).to_have_title("FastHTML-GT Website")
+
+        # test h1 tag
+        first_h1_locator = page.locator("h1").first
+        expect(first_h1_locator).to_have_text("Great Tables shown in FastHTML")
+        expect(first_h1_locator).to_have_css("text-align", "center")
 
         color1_value, color2_value = "#663399", "#ffa500"
-        color_picker1, color_picker2 = page.locator("#color1"), page.locator("#color2")
+        color_picker1, color_picker2 = page.locator(
+            "#color1"), page.locator("#color2")
 
         # test initial colors
         expect(color_picker1).to_have_value(color1_value)
