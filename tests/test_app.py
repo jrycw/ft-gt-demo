@@ -32,7 +32,7 @@ def test_app():
         page = context.new_page()
         page.goto(test_url)
 
-        page.wait_for_timeout(3000)
+        # page.wait_for_timeout(3000)
         # page.screenshot(path="screenshot.png")
 
         # test title tag
@@ -54,12 +54,12 @@ def test_app():
         # change color1
         color_picker1.fill(color2_value)
         expect(color_picker1).to_have_value(color2_value)
-        page.wait_for_timeout(3000)
+        # page.wait_for_timeout(3000)
 
         # change color2
         color_picker2.fill(color1_value)
         expect(color_picker2).to_have_value(color1_value)
-        page.wait_for_timeout(3000)
+        # page.wait_for_timeout(3000)
 
         context.close()
         browser.close()
