@@ -1,7 +1,8 @@
 from functools import cache
 
 import polars as pl
-from fasthtml.common import H2, Card, Div, Form, Grid, Input, Main, Title, H1, fast_app
+from fasthtml.common import (H1, H2, Card, Div, Form, Grid, Input, Main, Title,
+                             fast_app)
 from great_tables import GT, html
 from great_tables.data import sza
 
@@ -58,12 +59,10 @@ def homepage():
                 Grid(
                     Div(),
                     Card(
-                        H2("Color1"), Input(type="color",
-                                            id="color1", value="#663399")
+                        H2("Color1"), Input(type="color", id="color1", value="#663399")
                     ),
                     Card(
-                        H2("Color2"), Input(type="color",
-                                            id="color2", value="#FFA500")
+                        H2("Color2"), Input(type="color", id="color2", value="#FFA500")
                     ),
                     Div(),
                 )
