@@ -1,3 +1,4 @@
+[![CI Tests](https://github.com/jrycw/ft-gt-demo/actions/workflows/ci-tests.yaml/badge.svg)](https://github.com/jrycw/ft-gt-demo/actions/workflows/ci-tests.yaml)
 # ft-gt-demo
 This repository demonstrates how to use a decorator approach to build a FastHTML app integrated with Great Tables.
 
