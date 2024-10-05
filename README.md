@@ -67,10 +67,12 @@ def homepage():
                 Grid(
                     Div(),
                     Card(
-                        H2("Color1"), Input(type="color", id="color1", value="#663399")
+                        H2("Color1"),
+                        Input(type="color", id="color1", value="#663399"),
                     ),
                     Card(
-                        H2("Color2"), Input(type="color", id="color2", value="#FFA500")
+                        H2("Color2"),
+                        Input(type="color", id="color2", value="#FFA500"),
                     ),
                     Div(),
                 )
