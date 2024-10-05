@@ -6,11 +6,11 @@ By decorating a function that returns a `GT` instance with `gt2fasthtml`, you ca
 
 ## Example
 ```python
-from functools import cache, partial, wraps
+from functools import cache
 
 import polars as pl
-from fasthtml.common import (H2, Card, Div, Form, Grid, Input, Main, NotStr,
-                             Title, Titled, fast_app)
+from fasthtml.common import (H1, H2, Card, Div, Form, Grid, Input, Main, Title,
+                             fast_app)
 from great_tables import GT, html
 from great_tables.data import sza
 
@@ -56,7 +56,7 @@ def post(d: dict):
 def homepage():
     return (
         Title("FastHTML-GT Website"),
-        Titled("Great Tables shown in FastHTML", style="text-align:center"),
+        H1("Great Tables shown in FastHTML", style="text-align:center"),
         Main(
             Form(
                 hx_post="/submit",
