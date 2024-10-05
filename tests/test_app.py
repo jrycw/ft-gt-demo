@@ -25,9 +25,10 @@ def start_server():
     process.terminate()
 
 
-def test_app():
+@pytest.mark.parametrize("core", ["chromium", "firefox"])
+def test_app(core):
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = getattr(p, core).launch(headless=True)
         context = browser.new_context(record_video_dir="videos/")
         page = context.new_page()
         page.goto(test_url)
@@ -44,8 +45,7 @@ def test_app():
         expect(first_h1_locator).to_have_css("text-align", "center")
 
         color1_value, color2_value = "#663399", "#ffa500"
-        color_picker1, color_picker2 = page.locator(
-            "#color1"), page.locator("#color2")
+        color_picker1, color_picker2 = page.locator("#color1"), page.locator("#color2")
 
         # test initial colors
         expect(color_picker1).to_have_value(color1_value)
